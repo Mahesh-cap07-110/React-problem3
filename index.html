@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- React and ReactDOM libraries -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Inline JavaScript using Babel -->
+    <script type="text/babel">
+        // Function to handle button click event
+        function handleClick() {
+            alert('Hello');
+        }
+
+        // Rendering the React component into the 'root' div
+        ReactDOM.render(
+            // JSX code wrapped in a React Fragment
+            <React.Fragment>
+                {/* Paragraph element */}
+                <p>React is a JavaScript library</p>
+
+                {/* Div element with class 'main' */}
+                <div className="main" style={{ backgroundColor: 'lightgray', padding: '10px' }}>
+                    {/* Text prompting user to click the button */}
+                    <p>Click the below button to alert 'Hello'</p>
+
+                    {/* Button triggering the alert */}
+                    <button onClick={handleClick}>Alert Hello</button>
+                </div>
+            </React.Fragment>,
+            document.getElementById('root') // Render target
+        );
+    </script>
+</body>
+</html>
+
+<!-- Brief Document:
+    
+This HTML document demonstrates a simple React component created using JSX syntax.
+The component consists of a paragraph element and a div element containing a prompt and a button.
+Clicking the button triggers an alert with the message 'Hello'.
+Testing has been performed to ensure that the component works as expected.
+
+Challenges faced include:
+
+- Understanding event handling in React components.
+- Styling the component using inline styles.
+-->
+
+
